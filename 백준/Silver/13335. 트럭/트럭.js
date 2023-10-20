@@ -11,7 +11,7 @@ let totalWeight = 0;
 while (que.length) {
     cnt++;
 
-    // 큐에서 나가는 트럭의 무게를 빼줍니다.
+    // 큐에서 나가는 트럭의 무게를 빼줌
     totalWeight -= que.shift();
     
     if (trucks.length) {
