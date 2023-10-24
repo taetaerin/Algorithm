@@ -2,19 +2,19 @@ function solution(s) {
     var answer = '';
     s = s.split(' ');
 
-    for(let j=0; j<s.length; j++) {
-        for(let i = 0; i < s[j].length; i++) {
+    for(let word of s) {
+        for(let i = 0; i < word.length; i++) {
             if(i % 2 === 0) {
-                answer += s[j][i].toUpperCase();
+                answer += word[i].toUpperCase();
             } else {
-                answer += s[j][i].toLowerCase();
+                answer += word[i].toLowerCase();
             }
         }
-        if(j < s.length-1) {
-            answer+= ' '
-        }
+        answer += ' ';
     }
-
+    answer = answer.slice(0, -1);
     return answer;
 }
+
+
 
