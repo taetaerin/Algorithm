@@ -13,6 +13,8 @@ function solution(s) {
         answer += ' ';
     }
     answer = answer.slice(0, -1);
+    //"aaa " -> "AaA " trim 하면 안되는 이유
+    // answer = answer.trim()
     return answer;
 }
 
