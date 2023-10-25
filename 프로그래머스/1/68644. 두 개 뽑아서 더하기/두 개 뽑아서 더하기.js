@@ -1,13 +1,10 @@
 function solution(numbers) {
     var answer = [];
     for(let i=0; i<numbers.length; i++) {
-        for(let k=i+1; k<numbers.length; k++) {
-            answer.push(numbers[i] + numbers[k])
+        for(let j=i+1; j<numbers.length; j++) {
+            answer.push(numbers[i]+numbers[j])
         }
     }
-    console.log(answer)
     answer = [...new Set(answer)].sort((a,b) => a-b)
-
-    
     return answer;
 }
