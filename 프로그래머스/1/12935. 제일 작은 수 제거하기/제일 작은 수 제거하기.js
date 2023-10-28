@@ -1,6 +1,13 @@
 function solution(arr) {
     var answer = [];
-    arr.splice(arr.indexOf(Math.min(...arr)), 1)
-    answer = arr.length >1 ? arr : [-1]
+    
+    if(arr.length != 1) {
+        let minIdx = arr.indexOf(Math.min(...arr))
+        console.log(minIdx)
+        arr.splice(minIdx, 1)
+        answer = arr
+    }else {
+        answer.push(-1)
+    }
     return answer;
 }
