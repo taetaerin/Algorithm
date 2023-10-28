@@ -1,10 +1,11 @@
 function solution(a, b) {
     var answer = 0;
-    if(a<=b) {
+    
+    if(a<b) {
         for(let i=a; i<=b; i++) {
             answer += i
         }
-    } else {
+    }else {
         for(let i=a; i>=b; i--) {
             answer += i
         }
