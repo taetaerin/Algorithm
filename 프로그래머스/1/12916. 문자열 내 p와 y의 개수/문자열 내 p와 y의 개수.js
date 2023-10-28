@@ -1,19 +1,17 @@
 function solution(s){
-    var answer = true;
     s = s.toLowerCase()
-    pnum = 0;
-    ynum = 0
+    let a = 0;
+    let b = 0;
     
-    for(let i=0; i<s.length; i++) {
-        if(s[i] == 'p') {
-            pnum +=1
+    for(let x of s) {
+        console.log(x)
+        if(x === 'p') {
+            a += 1
         }
-        if(s[i] == 'y') {
-            ynum +=1
+        if(x === 'y') {
+            b += 1
         }
     }
-    
-    if(pnum != ynum) answer=false
-
+    const answer = a==b ? true : false
     return answer;
 }
