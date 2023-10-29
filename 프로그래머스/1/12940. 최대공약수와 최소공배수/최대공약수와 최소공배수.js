@@ -1,16 +1,15 @@
 function solution(n, m) {
     var answer = [];
-    let a = 0
-    let b = 0
-    let num = n>m? n : m
-    for(let i=1; i<=num; i++) {
-        if(n%i == 0 && m%i==0) {
-            a = i
+    let minNum = 0;
+
+    for(let i=1; i<=m; i++) {
+        if(n%i == 0 && m%i == 0) {
+            minNum = i
         }
     }
     
-    b = (n*m) / a
+    let maxNum = (n*m) / minNum
     
-    answer.push(a, b)
+    answer.push(minNum, maxNum)
     return answer;
 }
