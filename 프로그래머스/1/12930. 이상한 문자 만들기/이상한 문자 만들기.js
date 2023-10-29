@@ -1,22 +1,15 @@
 function solution(s) {
     var answer = '';
-    s = s.split(' ');
-
-    for(let word of s) {
-        for(let i = 0; i < word.length; i++) {
-            if(i % 2 === 0) {
-                answer += word[i].toUpperCase();
-            } else {
-                answer += word[i].toLowerCase();
-            }
+    s = s.split(' ')
+    
+    for(let i=0; i<s.length; i++) {
+        for(let j=0; j<s[i].length; j++) {
+            if(j%2==0) answer += s[i][j].toUpperCase()
+            else answer += s[i][j].toLowerCase()
         }
-        answer += ' ';
+        if(i<s.length-1) {
+            answer += ' '
+        }
     }
-    answer = answer.slice(0, -1);
-    //"aaa " -> "AaA " trim 하면 안되는 이유
-    // answer = answer.trim()
     return answer;
 }
-
-
-
