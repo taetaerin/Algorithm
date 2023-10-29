@@ -1,8 +1,8 @@
 function solution(s) {
     var answer = '';
-    let size = s.length;
-    if(size % 2 == 1) answer = s[Math.floor(size/2)]
-    else answer =  s[Math.floor(size/2)-1] + s[Math.floor(size/2)] 
-
+    let idx = parseInt(s.length/2)
+    
+    if(s.length % 2 != 0) answer += s[idx]
+    else answer += s[idx-1] + s[idx]
     return answer;
 }
