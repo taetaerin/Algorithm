@@ -1,11 +1,14 @@
 function solution(price, money, count) {
+    var answer = 0;
+    let total = 0;
     
-    let t = 0;
     for(let i=1; i<=count; i++) {
-        t += (price*i)
+        total += (price * i)
     }
+
     
-    let answer = (t>=money) ? t-money : 0
+    if(total > money) answer = total - money
+    else answer = 0
     
     return answer;
 }
