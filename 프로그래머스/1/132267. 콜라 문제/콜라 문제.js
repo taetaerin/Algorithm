@@ -3,7 +3,8 @@ function solution(a, b, n) {
     
     while(n >= a) {
         answer += parseInt(n/a) * b
-        n = parseInt(n/a)*b + parseInt(n%a)
-    }
+        n = parseInt(n/a) * b + parseInt(n%a)
+        console.log(answer, n)
+    } 
     return answer;
 }
