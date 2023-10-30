@@ -1,17 +1,15 @@
 function solution(n, arr1, arr2) {
     var answer = [];
-
+    let list = []
     for(let i=0; i<n; i++) {
-        let a = arr1[i] | arr2[i]
-        answer.push(a.toString(2).padStart(n, '0'))
-    }
-
-    for(let i=0; i<n; i++) {
-        answer[i] = answer[i].replaceAll('1', '#')
-        answer[i] = answer[i].replaceAll('0', ' ')
+        list.push((arr1[i] | arr2[i]).toString(2).padStart(n, '0'))
     }
     
-    console.log(answer)
-
+    for(let x of list) {
+        x = x.replaceAll('1', '#')
+        x= x.replaceAll('0', ' ')
+        answer.push(x)
+    }
+    
     return answer;
 }
