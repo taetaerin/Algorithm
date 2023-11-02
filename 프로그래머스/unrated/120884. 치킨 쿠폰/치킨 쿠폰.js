@@ -3,12 +3,25 @@ function solution(chicken) {
     let cou = chicken;
     
     while(cou >= 10) {
-        chicken = parseInt(cou/10)
-        cou = chicken + parseInt(cou%10)
-        answer += chicken
-        console.log(chicken, cou)
+        answer += parseInt(cou / 10)
+        cou = parseInt(cou / 10) + parseInt(cou % 10)
     }
-    console.log(answer)
     
     return answer;
 }
+
+
+
+
+
+
+
+
+//    while(cou >= 10) {
+//         chicken = parseInt(cou/10)
+//         cou = chicken + parseInt(cou%10)
+//         answer += chicken
+//         console.log(chicken, cou)
+//     }
+//     console.log(answer)
+    
