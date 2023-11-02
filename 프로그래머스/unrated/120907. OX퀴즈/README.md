@@ -1,10 +1,10 @@
 # [level unrated] OX퀴즈 - 120907 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120907#qna) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120907) 
 
 ### 성능 요약
 
-메모리: 33.5 MB, 시간: 2.33 ms
+메모리: 33.5 MB, 시간: 2.56 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2023년 11월 3일 16:58:1
+2023년 11월 4일 19:35:41
 
 ### 문제 설명
 
