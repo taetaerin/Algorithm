@@ -3,7 +3,6 @@ function solution(before, after) {
     
     before = before.split('').sort()
     after = after.split('').sort()
-    console.log(before, after)
     
     for(let i=0; i<before.length; i++) {
         if(before[i] !== after[i]) {
@@ -12,3 +11,21 @@ function solution(before, after) {
     }
     return answer;
 }
+
+
+
+
+
+
+
+
+
+//  before = before.split('').sort()
+//     after = after.split('').sort()
+//     console.log(before, after)
+    
+//     for(let i=0; i<before.length; i++) {
+//         if(before[i] !== after[i]) {
+//             return 0
+//         }
+//     }
