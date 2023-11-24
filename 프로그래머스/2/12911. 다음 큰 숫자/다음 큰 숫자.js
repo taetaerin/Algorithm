@@ -1,18 +1,33 @@
+// function solution(n) {
+//     var answer = 0;
+    
+//     const one_num = n.toString(2).split('').filter(item => item == 1).length;
+    
+//     console.log(one_num)
+    
+//     for(let i=n+1; i<10000; i++) {
+//         let result = i.toString(2).split('').filter(item => item == 1).length;
+//         if(result == one_num) {
+//             answer = i
+//             break;
+//         }
+//     }
+//     return answer;
+// }
+
 function solution(n) {
     var answer = 0;
     
-    const num = n.toString(2).split('').filter(i => i == 1).length
-    //console.log(num)
+    const one_num = n.toString(2).split('').filter(item => item == 1).length;
     
-    let b = n+1
-    
-    while(b > n) {
-        let b_num = b.toString(2).split('').filter(i => i ==1).length
-        if(b_num == num) {
-            answer = b
+    let result = n+1
+    while(result > n) {
+        let a = result.toString(2).split('').filter(item => item == 1).length;
+        if(a == one_num) {
+            answer = result
             break;
         }
-        b += 1
+        result += 1
     }
     return answer;
 }
