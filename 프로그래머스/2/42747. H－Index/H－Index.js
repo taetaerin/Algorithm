@@ -1,7 +1,7 @@
 function solution(citations) {
     var answer = 0;
     let n = citations.length;
-    let maxNum = -Infinity;
+    
     citations.sort((a,b) => a-b)
     
     for(let i=0; i<=n; i++) {
@@ -13,9 +13,9 @@ function solution(citations) {
         }
         
         if(i <= count) {
-            maxNum = i
+            answer = i
         }
     }
-    answer = maxNum;
+
     return answer;
 }
