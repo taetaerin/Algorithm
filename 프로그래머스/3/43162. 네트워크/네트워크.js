@@ -1,21 +1,24 @@
 function solution(n, computers) {
     var answer = 0;
-    let visited = [false]
+    let visited = Array.from({length: n}, () => 0)
     
-    function DFS(n) {
-        visited[n] = true
-        for(let i=0; i<computers.length; i++) {
-            if(computers[n][i] == 1 && !visited[i]) {
-                DFS(i)
+    
+    function DFS(i) {
+        visited[i] = 1;
+        for(let j=0; j<n; j++) {
+            if(computers[i][j] == 1 && visited[j] == 0) {
+                DFS(j)
             }
         }
     }
     
-    for(let i=0; i<computers.length; i++) {
-        if(!visited[i]) {
+    for(let i=0; i<n; i++) {
+        if(visited[i] == 0) {
+        
             DFS(i)
             answer += 1
         }
     }
+    
     return answer;
 }
