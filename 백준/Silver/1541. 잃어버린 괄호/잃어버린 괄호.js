@@ -1,17 +1,18 @@
-const fs = require('fs')
+const fs = require('fs');
+const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 
-let input = fs.readFileSync('/dev/stdin').toString().trim().split('-')
+let input = fs.readFileSync(filePath).toString().trim();
+let list = input.split('-')
 
-let list = [];
+let answer = []
 
-for(let x of input) {
-  if (x.includes('+')) {
-    let num = x.split('+')
-    list.push(num.map(Number).reduce((a,b) => a+b))
-  }
-  else {
-    list.push(Number(x))
-  }
+for(let x of list) {
+    if(x.includes('+')) {
+        let plus = x.split('+').map(Number)
+        answer.push(plus.reduce((a,b) => a+b))
+    }else{
+        answer.push(Number(x))
+    }
 }
 
-console.log(list.reduce((a,b) => a-b))
+console.log(answer.reduce((a,b) => a-b))
