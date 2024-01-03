@@ -1,30 +1,28 @@
 const fs = require('fs');
+const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 
-let input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
-const n = input.shift()
+let input = fs.readFileSync(filePath).toString().trim().split('\n');
+let n = input.shift()
 
-let list= []
-
-for(let x of input) {
-  list.push(x.split(' '))
-}
-
-let arr = list.sort((a,b) => {
-  if(a[1] == b[1]) {
-    return a[0] - b[0]
-  }else {
-    return a[1] - b[1]
-  }
+let list = input.map(i=> i.split(' ').map(Number))
+let sort_list = list.sort((a,b) => {
+    if(a[1] < b[1]) {
+        return -1
+    }
+    else if(a[1] == b[1]) {
+        return a[0] - b[0]
+    }
 })
 
-let finNum = 0;
-let answer = 0;
+let answer = 1
+let num = sort_list[0][1]
 
-for(let x of arr) {
-  if(parseInt(x[0]) >= parseInt(finNum)) {
-    answer +=1
-    finNum = x[1]
-  }
+sort_list.shift()
+for(let x of sort_list) {
+    if(x[0] >= num) {
+        num = x[1]
+        answer += 1
+    }
 }
 
 console.log(answer)
