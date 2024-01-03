@@ -1,14 +1,14 @@
 const fs = require('fs');
+const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 
-let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+let input = fs.readFileSync(filePath).toString().trim().split('\n');
+let n = input.shift()
+let list = input.shift().split(' ').map(Number).sort((a,b) => a-b)
+let dp = Array.from({length: n}, ()=>0);
+dp[0] = list[0]
 
-const list = input[1].split(' ').sort((a,b) => a-b).map(Number)
-
-let answer = 0
-let sum = 0;
-for(let x of list) {
-  sum += x
-  answer += sum
+for(let i=1; i<list.length; i++) {
+    dp[i] = dp[i-1] + list[i]
 }
 
-console.log(answer)
+console.log(dp.reduce((a,b) => a+b))
