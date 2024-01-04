@@ -1,23 +1,20 @@
 const fs = require('fs');
+const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 
-let n = fs.readFileSync('/dev/stdin').toString().trim();
-n = Number(n);
+let n = fs.readFileSync(filePath).toString().trim();
 
-let dp = Array.from({ length: n + 1 }, () => 10000);
+let dp = Array.from({length: Number(n)+1}, ()=> 10000)
+dp[0] = 0
+dp[1] = 0
 
-dp[0] = 0;
-dp[1] = 0;
-
-const arr = [1, 2, 3];
-
-for (let i = 2; i <= n; i++) {
-    for (let x of arr) {
-        if (i % x === 0) {
-            dp[i] = Math.min(dp[i], dp[i / x] + 1);
-        } else {
-            dp[i] = Math.min(dp[i], dp[i - 1] + 1);
-        }
+for(let i=2; i<=n; i++) {
+    dp[i] = dp[i-1] + 1
+    if(i % 2 == 0) {
+        dp[i] = Math.min(dp[i], dp[i/2]+1)
+    }
+    if(i % 3 == 0) {
+        dp[i] = Math.min(dp[i], dp[i/3]+1)
     }
 }
 
-console.log(dp[n]);
+console.log(dp[n])
